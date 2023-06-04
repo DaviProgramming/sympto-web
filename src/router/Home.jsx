@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar'
 
 import banner1 from '../assets/doctor-1920X1080-5sazd9c32660wknp.jpeg'
 import doctor1 from '../assets/doctor1.png'
+import consulta from '../assets/medical-exam-1254900235-4d04bce5d4c84ca4a4d44c2a8ad13843.jpg';
 
 const Home = (props) => {
   console.log(props)
@@ -27,6 +28,22 @@ const Home = (props) => {
             <img src={doctor1} alt="" />
           </div>
 
+        </div>
+
+        <div className="make-a-appointment">
+
+          <div className="background">
+            <img src={consulta} alt="" />
+          </div>
+
+         
+
+          <div className="text">
+            <div className="head-text">Agende uma consulta</div>
+            <div className="body-text">Entendemos que seu tempo é valioso e que encontrar a melhor data e horário para uma consulta médica pode ser um desafio. Com nossa plataforma de agendamento online, você pode dizer adeus às longas esperas por uma ligação telefônica ou a dificuldade de marcar consultas em horários que se encaixem em sua agenda.</div>
+          </div>
+
+         
         </div>
 
 
