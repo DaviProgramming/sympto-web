@@ -35,9 +35,9 @@ nav {
 
     background: $white-color;
 
-    .input-control{
+    .input-control {
         width: 100%;
-        background: $grey-color;
+        background:$secondary-color-2;
         padding: 10px;
         display: flex;
         justify-content: center;
@@ -46,17 +46,17 @@ nav {
         border-radius: 20px;
         color: $white-color;
 
-        svg{
+        svg {
             cursor: pointer;
         }
-        
-        input{
+
+        input {
             background: transparent;
             border: none;
             outline: none;
             color: $white-color;
 
-            &::placeholder{
+            &::placeholder {
                 font-weight: 400;
                 color: $white-color;
                 font-family: $font-family-1;
@@ -64,7 +64,7 @@ nav {
         }
     }
 
-    .hamburguer{
+    .hamburguer {
         cursor: pointer;
     }
 }
@@ -72,6 +72,20 @@ nav {
 section {
     position: relative;
     width: 100vw;
+
+    .btn-appointment {
+        background: $secondary-color-2;
+        color: $white-color;
+        border: none;
+        outline: none;
+        width: 180px;
+        height: 40px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-family: $font-family-1;
+        font-weight: 400;
+        cursor: pointer;
+    }
 }
 
 section.home {
@@ -95,7 +109,6 @@ section.home {
         h1 {
             top: 0%;
             left: 150px;
-
             position: absolute;
             font-size: 6rem;
             font-weight: 800;
@@ -132,13 +145,27 @@ section.home {
         }
     }
 
-    .find-doctor {
-        margin: 50px 0;
+    .content {
+        position: relative;
+
         width: 100vw;
+        height: 100vh;
         display: flex;
         flex-direction: row;
-        justify-content: center;
+       padding:  0px 60px;
         align-items: center;
+
+        &::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            right: -60px;
+            width: 50%;
+            height: 100%;
+            background: $primary-color;
+            z-index: -1 ;
+            clip-path: polygon(25% 0%, 100% 0, 75% 100%, 0% 100%);
+        }
 
         .text {
             padding: 30px;
@@ -156,81 +183,68 @@ section.home {
                 font-weight: 400;
                 font-size: 1.2rem;
                 color: $grey-color;
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
             }
         }
 
         .image {
-            height: 450px !important;
+            height: 100% !important;
+           
 
             img {
                 position: relative;
                 margin-top: 10px;
-                height: 100%;
+                height: 99%;
                 border-radius: 10px;
-                background: $primary-color;
+                object-fit: cover;
+                
                 z-index: 3;
             }
         }
-    }
 
-    .make-a-appointment{
-        margin: 70px 0;
-        width: 100vw;
-        min-height: 100vh;
-        position: relative;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
+        &.make-appoinment{
 
-        .background{
-            top: 0;
-            left: 0;
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            
-            img{
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
+
+            .text{
+                z-index: 3;
             }
-        }
 
-        .text {
-            padding: 170px;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            z-index: 2;
-           
+            .body-text{
+                width: 75%;
+            }
 
-            .head-text {
-                font-size: 3.4rem;
-                font-weight: 700;
-                color: $white-color;
-                font-family: $font-family-2;
+            
+
+            &::before{
+                content: "";
+                background: $white-color;
+                left: -200px;
+                width: 68.4%;
+                z-index: 2;
+               
                 
             }
 
-            .body-text {
-                font-weight: 400;
-                font-size: 1.2rem;
-                color: rgb(218, 218, 218);
+           
+
+            .image{
+                width: 100%;
+                position: absolute;
+                top: -10px;
+                right: 0;
+                z-index: -1;
+               
             }
-        }
+            img{
+                width: 100%;
+                height: 100%;
+              
+            }
 
-        &::before{
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, transparent -40%, black 100%);
-            z-index: 2;
         }
-
     }
+
+ 
 }

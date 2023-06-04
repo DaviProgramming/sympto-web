@@ -15,10 +15,10 @@ const Home = (props) => {
       <section className='container home'>
         <div className="hero">
           <img src={banner1} alt="hero" />
-       
+
         </div>
 
-        <div className="find-doctor">
+        <div className="content find-doctor">
 
           <div className="text">
             <span className="head-text">Encontre um médico agora mesmo</span>
@@ -30,22 +30,25 @@ const Home = (props) => {
 
         </div>
 
-        <div className="make-a-appointment">
 
-          <div className="background">
+
+        <div className="content make-appoinment">
+
+          <div className="text">
+            <span className="head-text">Agende uma consulta rapidamente </span>
+            <div className="body-text">
+              Entendemos que seu tempo é valioso e que encontrar a melhor data e horário para uma consulta médica pode ser um desafio. Com nossa plataforma de agendamento online, você pode dizer adeus às longas esperas por uma ligação telefônica ou a dificuldade de marcar consultas em horários que se encaixem em sua agenda.</div>
+          </div>
+          <div className="image">
             <img src={consulta} alt="" />
           </div>
 
-         
-
-          <div className="text">
-            <div className="head-text">Agende uma consulta</div>
-            <div className="body-text">Entendemos que seu tempo é valioso e que encontrar a melhor data e horário para uma consulta médica pode ser um desafio. Com nossa plataforma de agendamento online, você pode dizer adeus às longas esperas por uma ligação telefônica ou a dificuldade de marcar consultas em horários que se encaixem em sua agenda.</div>
-          </div>
-
-         
         </div>
 
+
+        <div className="content services">
+          
+        </div>
 
 
       </section>

@@ -11,8 +11,9 @@ const Navbar = (props) => {
       </div>
       <div className="search-input">
         <div className="input-control">
-          <FontAwesomeIcon icon={faSearch} />
-          <input type="text" placeholder='Procure por uma doença ou por um medico' />
+        <FontAwesomeIcon icon={faSearch} />
+          <input type="text" placeholder='' />
+         
         </div>
       </div>
       <div className="hamburguer">
