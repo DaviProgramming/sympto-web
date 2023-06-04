@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -9,13 +9,14 @@ const Navbar = (props) => {
       <div className="logo">
         SYMPTO
       </div>
-      <ul>
-        <li>Inicio</li>
-        <li>Planos</li>
-        <li>Sobre</li>
-      </ul>
+      <div className="search-input">
+        <div className="input-control">
+          <FontAwesomeIcon icon={faSearch} />
+          <input type="text" placeholder='Procure por uma doença ou por um medico' />
+        </div>
+      </div>
       <div className="hamburguer">
-      <FontAwesomeIcon icon={faBars} />
+        <FontAwesomeIcon icon={faBars} />
       </div>
     </nav>
   )
