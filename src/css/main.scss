@@ -38,6 +38,11 @@ nav {
 
     background: $white-color;
 
+    .logo{
+        font-weight: 800;
+        font-family: $font-family-3;
+    }
+
     .input-control {
         width: 100%;
         background:$secondary-color-2;
