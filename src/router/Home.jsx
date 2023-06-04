@@ -6,6 +6,10 @@ import Navbar from '../components/Navbar'
 import banner1 from '../assets/doctor-1920X1080-5sazd9c32660wknp.jpeg'
 import doctor1 from '../assets/doctor1.png'
 import consulta from '../assets/medical-exam-1254900235-4d04bce5d4c84ca4a4d44c2a8ad13843.jpg';
+import consulta2 from '../assets/consulta2.jpg'
+import agendamento from '../assets/agendamento.jpg'
+import pesquisa from '../assets/pesquisa.png'
+import pesquisaMedica from '../assets/pesquisa-medica.jpg'
 
 import Card from '../components/Card'
 
@@ -59,11 +63,12 @@ const Home = (props) => {
           </div>
 
           <div className="cards">
-            <Card text={"Consulta"} textBody={"qualquer texto"}/>
-            <Card text={"Agendamento"} textBody={"qualquer texto"}/>
-            <Card text={"Pesquisa"} textBody={"qualquer texto"}/>
+            <Card text={"Consulta"} textBody={"qualquer texto"} img={consulta2}/>
+            <Card text={"Agendamento"} textBody={"qualquer texto"} img={agendamento}/>
+            <Card text={"Pesquisa"} textBody={"qualquer texto"} img={pesquisaMedica}/>
           </div>
 
+    
           
 
         </div>

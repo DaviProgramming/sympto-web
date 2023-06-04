@@ -13,8 +13,8 @@ const Card = (props) => {
 
               <div className="card-text">
 
-                <span className='title'>{props.text}</span>
-                <span className='body'>{props.textBody}</span>
+                <span className='card-text-title'>{props.text}</span>
+                <span className='card-text-body'>{props.textBody}</span>
 
               </div>
 
