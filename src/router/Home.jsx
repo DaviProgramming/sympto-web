@@ -59,9 +59,9 @@ const Home = (props) => {
           </div>
 
           <div className="cards">
-            <Card />
-            <Card />
-            <Card />
+            <Card text={"Consulta"} textBody={"qualquer texto"}/>
+            <Card text={"Agendamento"} textBody={"qualquer texto"}/>
+            <Card text={"Pesquisa"} textBody={"qualquer texto"}/>
           </div>
 
           

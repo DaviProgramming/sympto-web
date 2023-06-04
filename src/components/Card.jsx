@@ -13,7 +13,8 @@ const Card = (props) => {
 
               <div className="card-text">
 
-                <span>{props.text}</span>
+                <span className='title'>{props.text}</span>
+                <span className='body'>{props.textBody}</span>
 
               </div>
 
