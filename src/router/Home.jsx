@@ -2,15 +2,22 @@ import React from 'react'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 
+
 import banner1 from '../assets/doctor-1920X1080-5sazd9c32660wknp.jpeg'
 import doctor1 from '../assets/doctor1.png'
 import consulta from '../assets/medical-exam-1254900235-4d04bce5d4c84ca4a4d44c2a8ad13843.jpg';
 
+import Card from '../components/Card'
+
 const Home = (props) => {
   console.log(props)
+ 
   return (
     <>
+   
       <Navbar />
+
+      
 
       <section className='container home'>
         <div className="hero">
@@ -30,8 +37,6 @@ const Home = (props) => {
 
         </div>
 
-
-
         <div className="content make-appoinment">
 
           <div className="text">
@@ -46,8 +51,21 @@ const Home = (props) => {
         </div>
 
 
-        <div className="content services">
+        <div className="services">
+
+          <div className="text">
+            <div className="head-text">O que oferecemos?</div>
+            <div className="body-text">Em nossa plataforma, oferecemos uma variedade de planos para atender às suas necessidades de cuidados com a saúde. Entendemos que cada pessoa tem requisitos diferentes quando se trata de consultas médicas, agendamentos e pesquisa de doenças. </div>
+          </div>
+
+          <div className="cards">
+            <Card />
+            <Card />
+            <Card />
+          </div>
+
           
+
         </div>
 
 
