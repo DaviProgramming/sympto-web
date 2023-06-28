@@ -31,6 +31,10 @@ const router = createBrowserRouter([
     path: "/cadastro",
     element: <SignUp  logado={logado} setLogado={setLogado} usuario={usuario} setUsuario={setUsuario} id={id} setId={setId} />
   },
+  {
+    path: "*",
+    element: <Home  logado={logado} setLogado={setLogado} usuario={usuario} setUsuario={setUsuario} id={id} setId={setId} />
+  }
   
 ])
  
