@@ -14,20 +14,17 @@ import pesquisaMedica from '../assets/pesquisa-medica.jpg'
 import Card from '../components/Card'
 
 const Home = (props) => {
-  console.log(props)
  
   return (
     <>
    
       <Navbar />
 
-      
-
       <section className='container home'>
-        <div className="hero">
+        {/* <div className="hero">
           <img src={banner1} alt="hero" />
 
-        </div>
+        </div> */}
 
         <div className="content find-doctor">
 

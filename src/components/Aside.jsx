@@ -1,8 +1,25 @@
 import React from 'react'
 
-const Aside = () => {
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+import { faCircleXmark } from '@fortawesome/free-solid-svg-icons'
+
+const Aside = (props) => {
   return (
-    <aside>Aside</aside>
+    <aside className={props.display}>
+
+    <div className="aside-content">
+
+    <div className="header"><FontAwesomeIcon icon={faCircleXmark}/></div>
+
+    
+
+    </div>
+
+
+    <div className="back"></div>
+
+    </aside>
   )
 }
 

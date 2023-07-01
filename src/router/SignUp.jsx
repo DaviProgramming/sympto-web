@@ -1,14 +1,19 @@
 import React from 'react'
-
 import { Link } from 'react-router-dom'
 
+import Navbar from '../components/Navbar'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser, faEnvelope, faIdCard, faKey } from '@fortawesome/free-solid-svg-icons'
+import { faUser, faEnvelope, faIdCard, faKey, faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
+
+
+import validaInputs from '../components/validaInputs'
 
 
 const SignUp = (props) => {
   return (
+    <>
+    <Navbar />
     <section className='cadastro'>
 
       <div className="section-content cadastro">
@@ -25,27 +30,33 @@ const SignUp = (props) => {
             Cadastre-se
           </div>
 
-            <label htmlFor="">
+            <label htmlFor="" onKeyUp={(e) => {validaInputs.removeSpan(e.target)}}>
               <span><FontAwesomeIcon icon={faUser} /> Nome completo</span>
-              <input type="text" />
+              <input type="text" name='nomeCadastro' />
             </label>
 
-            <label htmlFor="">
+            <label htmlFor="" onKeyUp={(e) => {validaInputs.removeSpan(e.target)}}>
               <span><FontAwesomeIcon icon={faIdCard} /> CPF</span>
-              <input type="text" />
+              <input type="number" name='cpfCadastro' />
             </label>
+
             
-            <label htmlFor=""><span><FontAwesomeIcon icon={faEnvelope} /> Email</span>
-              <input type="text" />
+            
+            <label htmlFor="" onKeyUp={(e) => {validaInputs.removeSpan(e.target)}}><span><FontAwesomeIcon icon={faEnvelope} /> Email</span>
+              <input type="text" name='emailCadastro' />
             </label>
-            <label htmlFor=""><span><FontAwesomeIcon icon={faKey} /> Senha</span>
-              <input type="text" />
+            <label htmlFor="" onKeyUp={(e) => {validaInputs.removeSpan(e.target)}}>
+              <span><FontAwesomeIcon icon={faKey} /> Senha</span>
+              <span className='change-type' id='passwordHide' onClick={(e) => {validaInputs.changeInputType('form-cadastro', 'show')}}><FontAwesomeIcon icon={faEye} /></span>
+              <span className='change-type' id='passwordShow' onClick={(e) => {validaInputs.changeInputType('form-cadastro', 'hide')}}><FontAwesomeIcon icon={faEyeSlash} /></span>
+
+              <input type="password" name='senhaCadastro'/>
             </label>
 
-            <Link to="/login">Já possui conta? cadastre-se</Link>
+            <Link to="/login">Já possui conta? <span>Entre</span> </Link>
 
 
-            <button type='button'>Cadastrar</button>
+            <button type='button' onClick={(e) => {validaInputs.validaForm('form-cadastro')}}>Cadastrar</button>
 
 
           </form>
@@ -56,6 +67,7 @@ const SignUp = (props) => {
       </div>
 
     </section>
+    </>
   )
 }
 

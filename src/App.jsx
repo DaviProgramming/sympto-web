@@ -4,6 +4,7 @@ import Home from './router/Home'
 import Login from './router/Login'
 import Settings from './router/Settings'
 import SignUp from './router/SignUp'
+import UserHome from './router/UserHome'
 
 import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
 
   },
   {
+    path: "/home",
+    element: <UserHome  logado={logado} setLogado={setLogado} usuario={usuario} setUsuario={setUsuario} id={id} setId={setId} />
+  },
+  {
     path: "/login",
     element: <Login  logado={logado} setLogado={setLogado} usuario={usuario} setUsuario={setUsuario} id={id} setId={setId} />
   },
@@ -31,6 +36,7 @@ const router = createBrowserRouter([
     path: "/cadastro",
     element: <SignUp  logado={logado} setLogado={setLogado} usuario={usuario} setUsuario={setUsuario} id={id} setId={setId} />
   },
+ 
   {
     path: "*",
     element: <Home  logado={logado} setLogado={setLogado} usuario={usuario} setUsuario={setUsuario} id={id} setId={setId} />
