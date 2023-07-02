@@ -17,8 +17,8 @@ const Home = (props) => {
  
   return (
     <>
-   
-      <Navbar />
+
+      <Navbar props={props} />
 
       <section className='container home'>
         {/* <div className="hero">

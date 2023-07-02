@@ -3,14 +3,19 @@ import React from 'react'
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 
+import Login from '../system/sendLogin';
+import Cadastrar from '../system/Cadastrar';
+
 import { redirect } from "react-router-dom";
+import sendLogin from '../system/sendLogin';
 
 
 const validaInputs = {
 
     error: 0,
-
-
+    usuario: '',
+    senha: '',
+    
     checkError(idForm) {
 
         if (this.error > 0) {
@@ -27,9 +32,12 @@ const validaInputs = {
         }else{
 
             if(idForm == 'form-login'){
-                window.location.href = '/home';
+
+                sendLogin.checkLogin(this.usuario, this.senha);
+
+
             } else {
-                window.location.href = 'login';
+                window.location.href = '/login';
             }
             
 
@@ -53,7 +61,14 @@ const validaInputs = {
             this.validaInput(loginUser, 'loginUser');
             this.validaInput(passwordUser, 'passwordUser');
 
+            this.usuario = loginUser.value;
+            this.senha = passwordUser.value;
+
+
+
             this.checkError(id);
+
+
 
 
 
@@ -231,7 +246,33 @@ const validaInputs = {
 
 
 
-    }
+    },
+
+    clickRemoveSpan(input){
+
+        let parent = input.parentNode;
+
+        let span = parent.querySelector('span');
+
+        span.style.display = 'none';
+
+    },
+
+    outInput(input){
+
+        let parent = input.parentNode;
+
+        let span = parent.querySelector('span');
+
+        if(input.value.length <= 0){
+
+            span.style.display = 'flex';
+
+        } else{
+            span.style.display = 'none';
+        }
+
+    },
 
 }
 

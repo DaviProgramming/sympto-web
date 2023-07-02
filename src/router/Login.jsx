@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faKey, faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
 
 import Navbar from '../components/Navbar'
+import Input from '../components/Input'
 
 import validaInputs from '../components/validaInputs'
 
@@ -15,7 +16,7 @@ const Login = (props) => {
 
   return (
     <>
-    <Navbar />
+    <Navbar props={props} />
     <section className='container login'>
 
     <div className="section-content login">
@@ -28,11 +29,9 @@ const Login = (props) => {
         <form  id='form-login'>
         <div className="title">Entrar na conta</div>
 
-            <label htmlFor="" onKeyUp={(e) => validaInputs.removeSpan(e.target)}>
-              <span><FontAwesomeIcon icon={faUser} /> Usuario</span>
-              <input type="text" name='usuarioLogin' />
-            </label>
-            <label htmlFor="" onKeyUp={(e) => validaInputs.removeSpan(e.target)}>
+          <Input name='usuarioLogin' icon={faUser} nomeSpan='Usuario'  />
+           
+            <label htmlFor="" onBlur={(e) => {validaInputs.outInput(e.target)}} onFocus={(e) => {validaInputs.clickRemoveSpan(e.target)}} onKeyUp={(e) => { validaInputs.removeSpan(e.target) }}>
               <span><FontAwesomeIcon icon={faKey} /> Senha</span>
               <input type="text" name='senhaLogin' />
               <span className='change-type' id='passwordHide' onClick={(e) => {validaInputs.changeInputType('form-login', 'show')}}><FontAwesomeIcon icon={faEye} /></span>
@@ -42,6 +41,7 @@ const Login = (props) => {
             <Link to="/cadastro">Não possui conta? <span>cadastre-se</span> </Link>
 
             <button type='button' onClick={(e) => {validaInputs.validaForm('form-login')}}>Logar</button>
+            
         </form>
       </div>
 
