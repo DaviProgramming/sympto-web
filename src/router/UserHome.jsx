@@ -13,6 +13,8 @@ import {
   faClipboardCheck,
   faUserDoctor,
   faSearch,
+  faPlus,
+  faLaptopMedical
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
@@ -31,7 +33,7 @@ const UserHome = (props) => {
               <button type="button">
                 <FontAwesomeIcon icon={faSearch} />
               </button>
-              <div className="nova-consulta">Iniciar consulta</div>
+              <div className="nova-consulta"><FontAwesomeIcon icon={faLaptopMedical}/>Nova consulta</div>
             </div>
           </div>
 
@@ -88,6 +90,23 @@ const UserHome = (props) => {
                     </div>
                   </div>
                 </div>
+
+                <div className="card">
+                  <div className="card-content">
+                    <div className="img-doenca">
+                      <img
+                        src="https://bkt-sa-east-1-cms-drupal.s3.sa-east-1.amazonaws.com/delboniauriemo.com.br/2023-03/Nova%20Gripe.png?XR7WnsH.Meq6eB_EhXj177VauJcr__vq"
+                        alt=""
+                      />
+                    </div>
+
+                    <div className="nome-doenca">
+                      <span>Gripe</span>
+                      <span className="infos">A gripe é uma infecção aguda do sistema respiratório, provocado pelo vírus da influenza, com grande potencial de transmissão</span>
+
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -106,11 +125,12 @@ const UserHome = (props) => {
                 <div className="card">
                   <div className="card-content">teste</div>
                 </div>
+                
               </div>
             </div>
 
             <div className="middle-medicos">
-              <div className="title">Médicos</div>
+              <div className="title">Médicos:</div>
               <div className="cards-content">
                 <div className="card"><div className="card-content">Teste</div>
                 </div>
@@ -118,6 +138,9 @@ const UserHome = (props) => {
                 </div>
                 <div className="card"><div className="card-content">Teste</div>
                 </div>
+                <div className="card"><div className="card-content">Teste</div>
+                </div>
+                
               </div>
             </div>
           </div>
@@ -187,11 +210,7 @@ const UserHome = (props) => {
 
           <div className="dashboard-center">{centerContent(page)}</div>
 
-          <div className="dados-dashboard">
-            <div className="content">
-              <div className="title">Alertas</div>
-            </div>
-          </div>
+      
         </div>
       </section>
     </>
