@@ -9,6 +9,9 @@ import sendLogin from './system/sendLogin';
 import Suporte from './router/Suporte';
 import Notificacoes from './router/Notificacoes'
 
+
+import Consulta from './router/Consuta'
+
 import Navbar from './components/Navbar';
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
@@ -64,8 +67,6 @@ function App() {
   sendLogin.getData(propsLogin);
 
 
-
-
   const router = createBrowserRouter([
 
     {
@@ -99,6 +100,13 @@ function App() {
       path: "/cadastro",
       element: <SignUp logado={logado} setLogado={setLogado} usuario={usuario} setUsuario={setUsuario} id={id} setId={setId} />
     },
+
+
+    {
+      path: "/consulta",
+      element: <Consulta logado={logado} setLogado={setLogado} usuario={usuario} setUsuario={setUsuario} id={id} setId={setId} />
+    },
+
 
     {
       path: "*",

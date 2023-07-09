@@ -1,0 +1,22 @@
+section {
+    position: relative;
+    width: 100vw;
+
+    .section-content{
+        background: $white-color;
+    }
+
+    .btn-appointment {
+        background: $secondary-color-2;
+        color: $white-color;
+        border: none;
+        outline: none;
+        width: 180px;
+        height: 40px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-family: $font-family-1;
+        font-weight: 400;
+        cursor: pointer;
+    }
+}

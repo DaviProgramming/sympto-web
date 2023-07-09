@@ -1,0 +1,140 @@
+aside {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: transparent;
+    z-index: 10;
+    opacity: 1;
+    display: flex;
+    flex-direction: row;
+
+    &.hide {
+        display: none;
+    }
+
+    &.show {
+        display: flex;
+    }
+
+    .aside-content {
+        position: relative;
+        width: 45%;
+        height: 100%;
+        background: $white-color;
+        opacity: 1;
+        display: flex;
+        flex-direction: column;
+
+        svg {
+            cursor: pointer;
+            font-size: 1.4rem;
+        }
+
+        div {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .header {
+            height: 30px;
+            padding: 30px 20px;
+        }
+
+        .user {
+            height: 70px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: $gap-2;
+            font-size: 1.3rem;
+            font-weight: 600;
+            font-family: $font-family-3;
+            box-shadow: $box-shadow-2;
+            padding: 20px;
+
+            & span::first-letter {
+                text-transform: uppercase;
+            }
+
+            .img {
+                width: 15%;
+                min-width: 30px;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 50%;
+                overflow: hidden;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .actions {
+            flex-direction: column;
+            gap: $gap-1;
+            margin-top: 30px;
+
+            .action {
+                a {
+                    width: 100%;
+                    height: 70px;
+                    display: flex;
+                    align-items: center;
+                    padding: 10px 30px;
+                    text-decoration: none;
+                    color: initial;
+                    box-shadow: $box-shadow-2;
+
+                    cursor: pointer;
+
+                    .action-title {
+                        display: flex;
+                        gap: $gap-1;
+                        display: flex;
+                        align-items: center;
+                        font-family: $font-family-3;
+                        font-size: 1.2rem;
+
+                        svg {
+                            background: $primary-color;
+                            padding: $padding-1;
+                            border-radius: 10px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .option-logout {
+            position: relative;
+            margin-top: 40px;
+            height: 70px;
+            box-shadow: $box-shadow-2;
+            padding: 10px 30px;
+            display: flex;
+            flex-direction: row;
+            gap: $gap-1;
+            align-items: center;
+            cursor: pointer;
+            font-family: $font-family-3;
+            font-size: 1.2rem;
+
+            svg {
+                background: $primary-color;
+                padding: $padding-1;
+                border-radius: 10px;
+            }
+        }
+    }
+
+    .back {
+        width: 100%;
+        height: 100%;
+        background: black;
+        opacity: 0.7;
+    }
+}

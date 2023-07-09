@@ -63,6 +63,9 @@ const Home = (props) => {
             <Card text={"Consulta"} textBody={"qualquer texto"} img={consulta2}/>
             <Card text={"Agendamento"} textBody={"qualquer texto"} img={agendamento}/>
             <Card text={"Pesquisa"} textBody={"qualquer texto"} img={pesquisaMedica}/>
+            <Card text={"Pesquisa"} textBody={"qualquer texto"} img={pesquisaMedica}/>
+
+            
           </div>
 
     

@@ -1,0 +1,263 @@
+section.home {
+    .hero {
+        position: relative;
+
+        margin-top: 60px;
+
+        height: 350px;
+        display: flex;
+        flex-direction: row;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 200%;
+            object-fit: cover;
+            position: absolute;
+        }
+
+        h1 {
+            top: 0%;
+            left: 150px;
+            position: absolute;
+            font-size: 6rem;
+            font-weight: 800;
+            z-index: 2;
+            color: $white-color;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+            z-index: 2;
+
+            span {
+                display: flex;
+                white-space: nowrap;
+                font-size: 2rem;
+                font-family: $font-family-2;
+
+                font-weight: 500;
+            }
+
+            cursor: default;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background: linear-gradient(to left, transparent 30%, rgba(0, 0, 0, 0.593));
+        }
+    }
+
+    .content {
+        position: relative;
+
+        width: 100vw;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: row;
+        padding: 0px 60px;
+        align-items: center;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: -60px;
+            width: 50%;
+            height: 100%;
+            background: $primary-color;
+            z-index: -1;
+            clip-path: polygon(25% 0%, 100% 0, 75% 100%, 0% 100%);
+        }
+
+        .text {
+            padding: 30px;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: $gap-2;
+
+            .head-text {
+                font-size: 3.4rem;
+                font-weight: 800;
+            }
+
+            .body-text {
+                font-weight: 400;
+                font-size: 1.2rem;
+                color: $grey-color;
+                display: flex;
+                flex-direction: column;
+                gap: $gap-3;
+            }
+        }
+
+        .image {
+            position: absolute;
+            bottom: 0;
+            right: 60px;
+            height: 100% !important;
+
+            img {
+                position: relative;
+                margin-top: 10px;
+                height: 99%;
+                border-radius: 10px;
+                object-fit: cover;
+
+                z-index: 3;
+            }
+        }
+
+        &.make-appoinment {
+            .text {
+                z-index: 3;
+            }
+
+            .body-text {
+                width: 75%;
+            }
+
+            &::before {
+                content: "";
+                background: $white-color;
+                left: -200px;
+                width: 66.65%;
+                z-index: 2;
+            }
+
+            .image {
+                width: 100%;
+                position: absolute;
+                top: -10px;
+                right: 0;
+                z-index: -1;
+            }
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        &.services {
+            &::before {
+                background: transparent;
+            }
+        }
+    }
+
+    .services {
+        position: relative;
+
+        width: 100vw;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        padding: 0px 20px;
+
+        justify-content: center;
+        gap: 100px;
+
+        .text {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+
+            gap: $gap-2;
+
+            .head-text {
+                font-size: 3.4rem;
+                font-weight: 800;
+            }
+
+            .body-text {
+                padding: 0px 100px;
+            }
+        }
+
+        .cards {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: $gap-3;
+        }
+
+        .card {
+            width: 300px;
+            height: 400px;
+            background: $white-color;
+            box-shadow: 0px 0px 4px $grey-color;
+            border-radius: 20px;
+            position: relative;
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 0px;
+                width: 100%;
+                height: 50%;
+                background: linear-gradient(to bottom, transparent 0%, $grey-color 100%);
+                z-index: 2;
+                border-radius: 20px;
+            }
+
+            &:hover {
+                scale: 1.03;
+                transition: 0.2s;
+            }
+
+            .card-image {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 20px;
+                    object-fit: cover;
+                }
+            }
+
+            .card-text {
+                width: 100%;
+
+                position: absolute;
+                bottom: 30px;
+                left: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 5px;
+
+                z-index: 2;
+
+                &-title {
+                    font-family: $font-family-3;
+                    font-weight: 800;
+                    font-size: 1.7rem;
+                    letter-spacing: 2px;
+                    text-transform: uppercase;
+                    color: $white-color;
+                }
+
+                &-body {
+                    font-size: 1.1rem;
+                    padding: 0px 30px;
+                    color: $white-color;
+                    font-family: $font-family-3;
+                }
+            }
+        }
+    }
+}

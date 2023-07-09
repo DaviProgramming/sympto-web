@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from 'react-router-dom'
 
 import Aside from './Aside'
+import AsideQuestions from './AsideQuestions'
 
 
 const Navbar = (props) => {
@@ -28,7 +29,10 @@ const Navbar = (props) => {
     return (
       <>
       <nav>
-  
+
+        <div className="navbar-content">
+
+        
   
         <div className="logo">
           {/* <FontAwesomeIcon icon={faBars} onClick={(e) => {
@@ -37,19 +41,13 @@ const Navbar = (props) => {
           <Link to='/'>SYMPTO</Link>
         </div>
   
-        <div className="search">
-  
-        <div className="form-control">
-          <input type="text" name="input-search" id="input-search" placeholder='Pesquisa' />
-          <span><FontAwesomeIcon icon={faSearch} /> </span>
-        </div>
-        
-        </div>
-  
+     
         <div className="login">
         <Link to="/login"> <FontAwesomeIcon icon={faUser} /> Entrar na sua conta</Link>
   
   
+        </div>
+
         </div>
   
   
@@ -67,32 +65,28 @@ const Navbar = (props) => {
     return (
       <>
       <nav>
-  
-  
+
+
+        <div className="navbar-content">
+
+          
         <div className="logo">
           {/* <FontAwesomeIcon icon={faBars} onClick={(e) => {
             setCallAside('grid');
           }} /> */}
           <Link to='/home'>SYMPTO</Link>
         </div>
-  
-        <div className="search">
-  
-        <div className="form-control">
-          <input type="text" name="input-search" id="input-search" placeholder='Pesquisa' />
-          <span><FontAwesomeIcon icon={faSearch} /> </span>
-        </div>
-        
-        </div>
-  
+
         <div className="login">
 
           
-        <div className='user-infos' onClick={(e) => { setCallAside('flex') } }> <FontAwesomeIcon icon={faUser}/> <span>{props.props.usuario}</span>  </div>
-  
-  
-        </div>
-  
+<div className='user-infos' onClick={(e) => { setCallAside('flex') } }> <FontAwesomeIcon icon={faUser}/> <span>{props.props.usuario}</span>  </div>
+
+
+</div>
+
+
+        </div>       
   
         
       </nav>
