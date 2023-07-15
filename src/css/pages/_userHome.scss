@@ -7,14 +7,13 @@ section.user-home {
 
     width: 97%;
     display: grid;
-    grid-template-columns: repeat(3, 20% 80% );
+    grid-template-columns: repeat(2, 8% 92%);
     gap: $gap-1;
 
     .user-info,
     .dashboard-center,
     .dados-dashboard {
       margin-top: 5px;
-      width: 100%;
       height: 100%;
       position: relative;
 
@@ -26,6 +25,11 @@ section.user-home {
     }
 
     .user-info {
+
+      position: fixed;
+      z-index: 3;
+      background: $white-color;
+      
       .content {
         display: flex;
         flex-direction: column;
@@ -74,6 +78,7 @@ section.user-home {
             flex-direction: row;
             gap: $gap-1;
             align-items: center;
+            justify-content: center;
             font-size: 1.1rem;
             font-weight: 700;
             cursor: pointer;
@@ -91,7 +96,11 @@ section.user-home {
       }
     }
 
+   
+
     .dashboard-center {
+      width: 90vw;
+      padding-left: 130px;
       .content.inicio {
         display: flex;
         flex-direction: column;
@@ -159,10 +168,9 @@ section.user-home {
 
             .title {
               position: relative;
-              font-size: 1.2rem;
+              font-size: 1rem;
               font-weight: 600;
               font-family: $font-family-4;
-              text-transform: uppercase;
 
               &::before {
                 position: absolute;
@@ -194,9 +202,20 @@ section.user-home {
             }
           }
 
+          .swiper{
+            width: 100%!important;
+            height: 100%!important;
+          }
+
+          .swiper .card{
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+          }
+
           .middle-doencas,
           .middle-historicos {
-            height: 250px;
+            height: 225px;
           }
 
           .middle-doencas {
@@ -217,8 +236,6 @@ section.user-home {
               width: 100%;
               height: 100%;
 
-             
-
               .img-doenca {
                 width: 100%;
                 height: 100%;
@@ -232,8 +249,7 @@ section.user-home {
                 }
               }
 
-              .nome-doenca{
-
+              .nome-doenca {
                 position: absolute;
                 bottom: 10px;
                 color: white;
@@ -244,28 +260,29 @@ section.user-home {
                 flex-direction: column;
                 gap: 10px;
 
-                .infos{
-                    font-size: 0.8rem;
-                    color: $white-color-2;
-                    display: -webkit-box;
-                    -webkit-box-orient: vertical;
-                    -webkit-line-clamp: 2; /* start showing ellipsis when 3rd line is reached */
-                    white-space: pre-wrap;
-                    overflow: hidden;
-
+                .infos {
+                  font-size: 0.8rem;
+                  color: $white-color-2;
+                  display: -webkit-box;
+                  -webkit-box-orient: vertical;
+                  -webkit-line-clamp: 2; /* start showing ellipsis when 3rd line is reached */
+                  white-space: pre-wrap;
+                  overflow: hidden;
                 }
-                
-
               }
 
-              &::before{
+              &::before {
                 position: absolute;
-                content: '';
+                content: "";
                 height: 100%;
                 width: 100%;
                 top: 0;
                 left: 0;
-                background: linear-gradient(to top, rgba(0, 0, 0, 0.818) 0%, transparent 80%);
+                background: linear-gradient(
+                  to top,
+                  rgba(0, 0, 0, 0.818) 0%,
+                  transparent 80%
+                );
                 border-radius: 5px;
 
                 z-index: 2;
@@ -291,25 +308,89 @@ section.user-home {
             display: flex;
             flex-direction: column;
 
-            .cards-content{
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
+            .cards-content {
+              display: flex;
+              flex-direction: column;
+              gap: 20px;
 
-                .card{
-                    width: 100%;
-                    height: 100px;
-                    box-shadow: $box-shadow-2;
+              .card {
+                width: 100%;
+                height: 150px;
+                box-shadow: $box-shadow-2;
 
-                    .card-content{
-                    padding: 15px;
+                .card-content {
+                  width: 100%;
+                  padding: 15px;
+                  display: flex;
+                  flex-direction: row;
+                  align-items: center;
+                  gap: 30px;
+                  position: relative;
 
+                  .img-doctor {
+                    width: 150px;
+                    height: 120px;
+
+                    img {
+                      width: 100%;
+                      height: 100%;
+                      border-radius: 10px;
+                      object-fit: fill;
                     }
+                  }
+
+                  .infos {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5px;
+                    .nome-doctor {
+                      font-size: 1.3rem;
+                      font-weight: 600;
+                      font-family: $font-family-4;
+                    }
+
+                    .infos-doctor {
+                      font-size: 0.9rem;
+                      font-weight: 400;
+                      font-family: $font-family-4;
+                    }
+                  }
+
+                  .action {
+                    position: absolute;
+                    right: 45px;
+
+                    button {
+                      border: none;
+                      box-shadow: $box-shadow-2;
+                      border-radius: 5px;
+                      padding: 15px;
+                      cursor: pointer;
+                      font-family: $font-family-4;
+                      font-weight: 600;
+                      background: $secondary-color-2;
+                      color: $white-color;
+
+                      &:hover {
+                        transition: 0.2s;
+                        background: $primary-color-2;
+                      }
+                    }
+                  }
                 }
+              }
             }
           }
         }
       }
+    }
+
+    .swiper-button-next, .swiper-button-prev{
+      display: none;
+    }
+
+    .swiper .swiper-pagination-bullet:not(.active){
+      background: white!important;
     }
 
     .dados-dashboard {

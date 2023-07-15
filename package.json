@@ -20,7 +20,8 @@
     "react-router-dom": "^6.11.2",
     "sass": "^1.62.1",
     "sweetalert2": "^11.7.12",
-    "sweetalert2-react-content": "^5.0.7"
+    "sweetalert2-react-content": "^5.0.7",
+    "swiper": "^10.0.4"
   },
   "devDependencies": {
     "@types/react": "^18.0.37",

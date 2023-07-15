@@ -1,9 +1,9 @@
 import React from "react";
-import Navbar from "../components/Navbar";
 
-import DivDoencas from "../components/divs/DivDoencas";
-import DivHistorico from "../components/divs/DivHistorico";
-import DivMedicos from "../components/divs/DivMedicos";
+import Carousel from "../components/Caroulsels/CarouselDoencas";
+import Navbar from "../components/Navbar";
+import MedicoCard from "../components/cards/MedicoCard";
+import DoencaCard from "../components/cards/DoencaCard";
 
 import imageUser from "../assets/james-person-1.jpg";
 import sendLogin from "../system/sendLogin";
@@ -14,7 +14,7 @@ import {
   faUserDoctor,
   faSearch,
   faPlus,
-  faLaptopMedical
+  faLaptopMedical,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
@@ -22,7 +22,34 @@ import { useState } from "react";
 const UserHome = (props) => {
   const [page, setPage] = useState("inicio");
 
+  const chanceChoiceMenu = {
+    handler(button){
+
+      this.removeAtivado();
+      this.adicionaAtivado(button);
+
+    },
+    removeAtivado(){
+
+      let choiceAtivada = document.querySelector('.choice.ativado');
+
+      if(choiceAtivada!= null){
+        choiceAtivada.classList.remove('ativado');
+      }
+
+    },
+
+    adicionaAtivado(button){
+
+      if(!button.classList.contains('ativado')){
+        button.classList.add('ativado');
+      }
+
+    }
+  }
+
   const centerContent = (page) => {
+
     if (page == "inicio") {
       return (
         <div className="content inicio">
@@ -33,114 +60,43 @@ const UserHome = (props) => {
               <button type="button">
                 <FontAwesomeIcon icon={faSearch} />
               </button>
-              <div className="nova-consulta"><FontAwesomeIcon icon={faLaptopMedical}/>Nova consulta</div>
+              <div className="nova-consulta">
+                <FontAwesomeIcon icon={faLaptopMedical} />
+                Nova consulta
+              </div>
             </div>
           </div>
 
           <div className="middle">
             <div className="middle-doencas">
-              <div className="title">Doenças mais procuradas:</div>
-              <div className="cards-content doencas">
-                <div className="card">
-                  <div className="card-content">
-                    <div className="img-doenca">
-                      <img
-                        src="https://i0.wp.com/prdnetshoes.wpcomstaging.com/wp-content/uploads/2021/05/treinargripado_netshoes_13052021.jpeg?fit=1256%2C500&ssl=1"
-                        alt=""
-                      />
-                    </div>
-
-                    <div className="nome-doenca">
-                      <span>Gripe</span>
-                      <span className="infos">A gripe é uma infecção aguda do sistema respiratório, provocado pelo vírus da influenza, com grande potencial de transmissão</span>
-
-                    </div>
-                  </div>
-                </div>
-
-                <div className="card">
-                  <div className="card-content">
-                    <div className="img-doenca">
-                      <img
-                        src="https://bkt-sa-east-1-cms-drupal.s3.sa-east-1.amazonaws.com/delboniauriemo.com.br/2023-03/Nova%20Gripe.png?XR7WnsH.Meq6eB_EhXj177VauJcr__vq"
-                        alt=""
-                      />
-                    </div>
-
-                    <div className="nome-doenca">
-                      <span>Gripe</span>
-                      <span className="infos">A gripe é uma infecção aguda do sistema respiratório, provocado pelo vírus da influenza, com grande potencial de transmissão</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="card">
-                  <div className="card-content">
-                    <div className="img-doenca">
-                      <img
-                        src="https://bkt-sa-east-1-cms-drupal.s3.sa-east-1.amazonaws.com/delboniauriemo.com.br/2023-03/Nova%20Gripe.png?XR7WnsH.Meq6eB_EhXj177VauJcr__vq"
-                        alt=""
-                      />
-                    </div>
-
-                    <div className="nome-doenca">
-                      <span>Gripe</span>
-                      <span className="infos">A gripe é uma infecção aguda do sistema respiratório, provocado pelo vírus da influenza, com grande potencial de transmissão</span>
-
-                    </div>
-                  </div>
-                </div>
-
-                <div className="card">
-                  <div className="card-content">
-                    <div className="img-doenca">
-                      <img
-                        src="https://bkt-sa-east-1-cms-drupal.s3.sa-east-1.amazonaws.com/delboniauriemo.com.br/2023-03/Nova%20Gripe.png?XR7WnsH.Meq6eB_EhXj177VauJcr__vq"
-                        alt=""
-                      />
-                    </div>
-
-                    <div className="nome-doenca">
-                      <span>Gripe</span>
-                      <span className="infos">A gripe é uma infecção aguda do sistema respiratório, provocado pelo vírus da influenza, com grande potencial de transmissão</span>
-
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <Carousel />
             </div>
+          
 
             <div className="middle-historicos">
-              <div className="title">Historico:</div>
               <div className="cards-content">
                 <div className="card">
-                  <div className="card-content">teste</div>
+                  <div className="card-content">Historico</div>
                 </div>
                 <div className="card">
-                  <div className="card-content">teste</div>
+                  <div className="card-content">Historico</div>
                 </div>
                 <div className="card">
-                  <div className="card-content">teste</div>
+                  <div className="card-content">Historico</div>
                 </div>
                 <div className="card">
-                  <div className="card-content">teste</div>
+                  <div className="card-content">Historico</div>
                 </div>
-                
               </div>
             </div>
 
             <div className="middle-medicos">
-              <div className="title">Médicos:</div>
               <div className="cards-content">
-                <div className="card"><div className="card-content">Teste</div>
-                </div>
-                <div className="card"><div className="card-content">Teste</div>
-                </div>
-                <div className="card"><div className="card-content">Teste</div>
-                </div>
-                <div className="card"><div className="card-content">Teste</div>
-                </div>
-                
+
+              <MedicoCard imagem={'https://www.nit.pt/wp-content/uploads/2020/10/66d5bec666c0d072dadac73d93668139.jpg'} nome='Doctor House' especialidade='Sabe tudo' />
+              <MedicoCard imagem={'https://www.nit.pt/wp-content/uploads/2020/10/66d5bec666c0d072dadac73d93668139.jpg'} nome='Doctor House' especialidade='Sabe tudo' />
+              <MedicoCard imagem={'https://www.nit.pt/wp-content/uploads/2020/10/66d5bec666c0d072dadac73d93668139.jpg'} nome='Doctor House' especialidade='Sabe tudo' />
+
               </div>
             </div>
           </div>
@@ -161,6 +117,10 @@ const UserHome = (props) => {
     }
   };
 
+
+  if(props.logado != "false"){
+
+
   return (
     <>
       <Navbar props={props} />
@@ -168,53 +128,55 @@ const UserHome = (props) => {
         <div className="section-content user-home">
           <div className="user-info">
             <div className="content">
-              <div className="userCard">
-                <div className="img">
-                  <img src={imageUser} alt="" />
-                </div>
-                <div className="nome">{sendLogin.data.usuario}</div>
-                {/* <div className="idade">25</div> */}
-                {/* <div className="sexo">Masculino</div> */}
-              </div>
+             
 
               <div className="choices">
                 <div
                   className="choice inicio ativado"
                   onClick={(e) => {
                     setPage("inicio");
+                    chanceChoiceMenu.handler(e.target);
                   }}
                 >
-                  <FontAwesomeIcon icon={faHouse} /> Inicio
+                  <FontAwesomeIcon icon={faHouse} /> 
                 </div>
 
                 <div
                   className="choice historico"
                   onClick={(e) => {
                     setPage("historico");
+                    chanceChoiceMenu.handler(e.target);
+
                   }}
                 >
-                  <FontAwesomeIcon icon={faClipboardCheck} /> Historicos
+                  <FontAwesomeIcon icon={faClipboardCheck} /> 
                 </div>
 
                 <div
                   className="choice medicos"
                   onClick={(e) => {
                     setPage("medicos");
+                    chanceChoiceMenu.handler(e.target);
+
                   }}
                 >
-                  <FontAwesomeIcon icon={faUserDoctor} /> Médicos
+                  <FontAwesomeIcon icon={faUserDoctor} /> 
                 </div>
               </div>
             </div>
           </div>
 
           <div className="dashboard-center">{centerContent(page)}</div>
-
-      
         </div>
       </section>
     </>
   );
+}else{
+
+  window.location.href = "/";
+
+}
+
 };
 
 export default UserHome;
